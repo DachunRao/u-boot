@@ -527,6 +527,7 @@ static int eth_post_probe(struct udevice *dev)
 		   !is_valid_ethaddr(pdata->enetaddr)) {
 #ifdef CONFIG_NET_RANDOM_ETHADDR
 		net_random_ethaddr(pdata->enetaddr);
+		eth_env_set_enetaddr_by_index("eth", dev->seq, pdata->enetaddr);
 		printf("\nWarning: %s (eth%d) using random MAC address - %pM\n",
 		       dev->name, dev->seq, pdata->enetaddr);
 #else
