@@ -72,7 +72,6 @@ config TARGET_IMX8MM_DDR4_EVK
 	select SUPPORT_SPL
 	select IMX8M_DDR4
 
-
 endchoice
 
 config SYS_SOC
